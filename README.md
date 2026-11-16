@@ -1,23 +1,21 @@
 # City of Crime — Veyra
 
-Open-world browser crime game with WebGL2 graphics, missions, police AI, phone OS, news network, and **multiplayer server browser**.
+Open-world browser crime game with WebGL2, missions, police AI, phone OS, and **Netlify multiplayer server browser**.
 
-## Play
+## Multiplayer (no codes)
 
-Open `index.html` locally or deploy to any static host (Netlify, GitHub Pages).
+1. Open the game on the **Netlify URL** (required so `/api/rooms` works).
+2. Main menu → **Multiplayer**.
+3. **Create Server** — your server appears in the public list.
+4. Friend hits **Refresh**, then **JOIN** on your server.
+5. No room codes, no offer/answer paste.
 
-**Netlify project:** https://city-of-crime-veyra.netlify.app  
-**GitHub:** https://github.com/siddop422/city-of-crime-veyra
+Backend: Netlify Functions + Blobs room registry. Peer connection: PeerJS + WebRTC.
 
-## Multiplayer
+## Deploy
 
-1. Open **Multiplayer** from the main menu or phone.
-2. **Server Browser** tab → **Create Server** → share the short room code (`VEYRA-XXXX`).
-3. Friend enters the code and presses **Join Server**.
-4. Manual SDP codes remain available as a fallback tab.
-
-Uses PeerJS cloud signaling + WebRTC data channels (no custom game server required).
-
-## Controls
-
-WASD · mouse look · Shift sprint · Space jump/handbrake · E interact · F enter vehicle · P phone · M map · Esc menu
+```bash
+cd veyra-deploy
+npm install
+npx netlify deploy --prod --site <site-id>
+```
